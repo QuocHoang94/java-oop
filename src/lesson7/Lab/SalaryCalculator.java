@@ -20,8 +20,9 @@ public class SalaryCalculator {
         double totalSalaryCeo = 0;
 
         for(Employee i : employee){
-            if(i.getCountEmployee() < 3){
-                higherEmployee = count(i.getCountEmployee(),i.getSalaryEmployee(),i.getSupportSalaryEmployee());
+            if(i.getCountEmployee() < 2){
+                double higherSalaryEmployee = count(i.getCountEmployee(),i.getSalaryEmployee(),i.getSupportSalaryEmployee());
+                higherEmployee = higherSalaryEmployee + higherEmployee ;
             }
             else{
                 Employee = count(i.getCountEmployee(),i.getSalaryEmployee(),i.getSupportSalaryEmployee());
@@ -46,11 +47,15 @@ public class SalaryCalculator {
 //        Employee Yun = new Employee(2, 6);
 //        Employee Yi = new Employee(3, 9);
         Employee Yan = new Employee(1,30,15);
+        Employee Yu = new Employee(1,30,15);
+        Employee Yin = new Employee(1,30,15);
         Employee countSalaryEmployees = new Employee(7, 30, 5);
         Manager countSalaryManagers = new Manager(2,50,30);
         Ceo countSalaryCeo = new Ceo(1, 100, 0);
         employees.add(countSalaryEmployees);
         employees.add(Yan);
+        employees.add(Yu);
+        employees.add(Yin);
 //        employees.add(Yan);
 //        Yan.setSupportSalaryEmployee(15);
 //        manager.add(countSalaryManagers);
