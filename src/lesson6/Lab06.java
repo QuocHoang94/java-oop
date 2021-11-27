@@ -47,16 +47,24 @@ public class Lab06 {
 
     public static void pickRandomMember(){
         //pick a member from currentClassMember
-        Set<String> keySet = currentClassMember.keySet();
-        List<String> keyList = new ArrayList<>(keySet);
+        Set<String> valueSet = currentClassMember.keySet();
+        List<String> valueList = new ArrayList<>(valueSet);
 
-        int size = keyList.size();
-        int ranIdx = new Random().nextInt(size);
+        int size = valueList.size();
+        int randomValue = new Random().nextInt(size);
 
-
-        String randomKey = keyList.get(ranIdx);
-        String randomValue = currentClassMember.get(randomKey);
-
-        System.out.println("key:" + randomKey +"||"+"value:" + randomValue);
+        String getKey = valueList.get(randomValue);
+        String getValue = currentClassMember.get(getKey);
+        System.out.println(getKey + getValue);
+//        Set<String> keySet = currentClassMember.keySet();
+//        List<String> keyList = new ArrayList<>(keySet);
+//
+//        int size = keyList.size();
+//        int ranIdx = new Random().nextInt(size);
+//
+//        String randomKey = keyList.get(ranIdx);
+//        String randomValue = currentClassMember.get(randomKey);
+//
+//        System.out.println("key:" + randomKey +"||"+"value:" + randomValue);
     }
 }
