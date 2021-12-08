@@ -48,7 +48,7 @@ public class SalaryCalculator {
 //        Employee Yi = new Employee(3, 9);
         Employee Yan = new Employee(1,30,15);
         Employee Yu = new Employee(1,30,15);
-        Employee Yin = new Employee(1,30,15);
+        Employee Yin = new Employee(1,30,16);
         Employee countSalaryEmployees = new Employee(7, 30, 5);
         Manager countSalaryManagers = new Manager(2,50,30);
         Ceo countSalaryCeo = new Ceo(1, 100, 0);
