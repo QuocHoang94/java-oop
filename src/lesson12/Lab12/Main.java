@@ -1,31 +1,17 @@
-package lesson11.Lab11;
+package lesson12.Lab12;
 
-import java.util.ArrayList;
+import lession2.Array;
+import org.jetbrains.annotations.NotNull;
+
+import java.util.Arrays;
 import java.util.List;
-import java.util.stream.Collectors;
 
 public class Main {
-    public static void main(String[] args) {
-        List<Animal> AnimalRacing = new ArrayList<>();
-
+    public static void animalRacing(List<RunBehavior> animalList) {
         int speedDog = 0;
         int speedTiger = 0;
         int speedHorse = 0;
-        Dog dog = new Dog();
-        Eagle eagle = new Eagle();
-        Falcon falcon = new Falcon();
-        Horse horse = new Horse();
-        Tiger tiger = new Tiger();
-        AnimalRacing.add(dog);
-        AnimalRacing.add(eagle);
-        AnimalRacing.add(falcon);
-        AnimalRacing.add(horse);
-        AnimalRacing.add(tiger);
-//        dog.AnimalSpeed();
-//        horse.AnimalSpeed();
-//        tiger.AnimalSpeed();
-        AnimalRacing = AnimalRacing.stream().filter(x -> !x.checkFlyAble()).collect(Collectors.toList());
-        for (Animal x : AnimalRacing) {
+        for (RunBehavior x : animalList) {
             if (x.getClass().getSimpleName().equals("Dog")) {
                 x.AnimalSpeed();
                 speedDog = x.getSpeed();
@@ -52,19 +38,18 @@ public class Main {
             System.out.println("Animal Racing Top Speed is Tiger " + speedTiger);
         }
     }
+
+    public static void main(String[] args) {
+        Animal Eagle = new Eagle();
+        Animal Falcon = new Falcon();
+        RunBehavior Dog = new Dog();
+        RunBehavior Horse = new Horse();
+        RunBehavior Tiger = new Tiger();
+
+        Eagle.isFly();
+        Falcon.isFly();
+
+        List<RunBehavior> animalList = Arrays.asList(Dog, Horse, Tiger);
+        Main.animalRacing(animalList);
+    }
 }
-
-/*Resolve Animal Racing with ABSTRACTION and we add flyAble field:
- * Horse: Max 75 km/h !flyAble
- * Tiger: Max 100 Km/h !flyAble
- * Dog: Max 60 KM/h !flyAble
- * Falcon: Max 40KM/H flyAble
- * Eagle: Max 60KM/H flyAble
- *
- *
- * AnimalRacing | Class | Controller
-
-TestAnimalRacing
-
-. Form Up test data (ex: animal list)
-. Use th*/
