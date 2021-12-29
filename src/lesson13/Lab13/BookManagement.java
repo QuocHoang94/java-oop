@@ -71,7 +71,6 @@ public class BookManagement {
                 for (Book bookItem : bookList) {
                     if (bookItem.getISBN().equals(toFindISBN))
                         foundBook = bookItem;
-                    break;
                 }
 
                 if (foundBook == null) {
