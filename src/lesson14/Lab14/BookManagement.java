@@ -19,11 +19,15 @@ public class BookManagement {
         choiceMenu();
         while (true) {
             Scanner checkPoint = new Scanner(System.in);
-            int valueCheck = Integer.parseInt(checkPoint.nextLine());
-            if (valueCheck == 0) {
+            String valueCheck = checkPoint.nextLine();
+            if(Objects.equals(valueCheck, "")){
+                System.out.println("System out");
+                choiceMenu();
+            }
+            if (Objects.equals(valueCheck, "0")) {
                 return;
             }
-            if (valueCheck == 1) {
+            if (Objects.equals(valueCheck, "1")) {
                 //Input
                 //Save
                 Scanner scanners = new Scanner(System.in);
@@ -54,7 +58,7 @@ public class BookManagement {
                 }
                 choiceMenu();
             }
-            if (valueCheck == 2) {
+            if (Objects.equals(valueCheck, "2")) {
                 //Retrieve
                 System.out.println("Book ISBN to find: ");
                 Scanner scanner = new Scanner(System.in);
@@ -73,7 +77,7 @@ public class BookManagement {
                 }
                 choiceMenu();
             }
-            if (valueCheck == 3) {
+            if (Objects.equals(valueCheck, "3")) {
                 System.out.println("Please Typing Book ISBN to Update :");
                 Scanner scanner = new Scanner(System.in);
                 String toFindUpdate = scanner.nextLine();
@@ -98,14 +102,14 @@ public class BookManagement {
                 } else {
                     DataFactory.saveBookList(bookList, bookFilePath);
                     List<Book> bookListFromFile = DataFactory.readBookList(bookFilePath);
-                    System.out.println("This is List Book After Deleting :");
+                    System.out.println("This is List Book After Updating :");
                     for (Book bookItem : bookList) {
                         System.out.println(bookItem);
                     }
                 }
                 choiceMenu();
             }
-            if (valueCheck == 4) {
+            if (Objects.equals(valueCheck, "4")) {
                 System.out.println("Please Type Book ISBN to Delete in List Book :");
                 Scanner scanner = new Scanner(System.in);
                 String toFindDelete = scanner.nextLine();
@@ -128,11 +132,6 @@ public class BookManagement {
                 }
                 choiceMenu();
             }
-            else{
-                System.out.println("Sorry Wrong");
-                choiceMenu();
-            }
-
         }
 
     }
